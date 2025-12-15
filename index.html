@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <title>A‑Frame links en nueva pestaña</title>
+
+  <!-- A‑Frame -->
+  <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+
+  <!-- Componente redirect: abre URL en nueva pestaña -->
+  <script>
+    AFRAME.registerComponent('redirect', {
+      schema: { href: { type: 'string' } },
+      init() {
+        this.el.addEventListener('click', () => {
+          window.open(this.data.href, '_blank');
+        });
+      }
+    });
+  </script>
+</head>
+
+<body>
+  <a-scene>
+    <!-- Activos -->
+    <a-assets>
+      <img id="imgLink1" src="assets/PINTURA 1.jpg">
+      <img id="imgLink2" src="assets/PINTURA 2.jpg">
+      <img id="imgLink3" src="assets/PINTURA 3.jpg">
+      <img id="imgLink4" src="assets/PINTURA 4.jpg">
+      <img id="imgLink5" src="assets/PINTURA 5.jpg">
+      <img id="imgLink6" src="assets/PINTURA 6.jpg">
+      <img id="imgLink7" src="assets/PINTURA 7.jpg">
+      <img id="imgLink8" src="assets/PINTURA 8.jpg">
+      <img id="imgLink9" src="assets/PINTURA 9.jpg">
+      <img id="imgLink10" src="assets/PINTURA 10.jpg">
+      <img id="groundTexture" src="assets/pasto.jpg">
+      <a-asset-item id="miModelo3D" src="assets/conejo.glb"></a-asset-item>
+      <img id="skyTexture" src="assets/CIELO.png">
+    </a-assets>
+
+    <!-- Imagen 1 -->
+    <a-image
+      class="clickable"
+      src="#imgLink1"
+      
+      position="-2 2 -5"
+      width="2"
+      height="1"
+      redirect="href: https://maps.app.goo.gl/6ACH7jV7GH8qhTsy6">
+    </a-image>
+
+    <!-- Imagen 2 -->
+    <a-image
+      class="clickable"
+      src="#imgLink2"
+      position="2 2 -5"
+      width="2"
+      height="1"
+      redirect="href: https://maps.app.goo.gl/jvso5Ch5ZcZK1HzH8">
+    </a-image>
+
+    <!-- Imagen 3 -->
+    <a-image
+      class="clickable"
+      src="#imgLink3"
+      position="-4 2 -8"
+      width="2"
+      height="1"
+      redirect="href: https://maps.app.goo.gl/EY6t9Apam97qko3E7">
+    </a-image>
+
+    <!-- Imagen 4 -->
+    <a-image
+      class="clickable"
+      src="#imgLink4"
+      position="4 2 -8"
+      width="2"
+      height="1"
+      redirect="href: https://maps.app.goo.gl/zWdAEmfCpwBrdpmV7">
+    </a-image>
+
+    <!-- Imagen 5 -->
+    <a-image
+      class="clickable"
+      src="#imgLink5"
+      position="-6 2 -11"
+      width="2"
+      height="1"
+      redirect="href: https://maps.app.goo.gl/2AZz6RuQdaKsWqna7">
+    </a-image>
+
+    <!-- Imagen 6 -->
+    <a-image
+      class="clickable"
+      src="#imgLink6"
+      position="6 2 -11"
+      width="2"
+      height="1"
+      redirect="href: https://maps.app.goo.gl/N7T1eLiqGk2mhWZYA">
+    </a-image>
+
+    <!-- Imagen 7 -->
+    <a-image
+      class="clickable"
+      src="#imgLink7"
+      position="-4 2 -14"
+      width="2"
+      height="1"
+      redirect="href: https://maps.app.goo.gl/ZGHBQbVxa41ov8n2A">
+    </a-image>
+
+    <!-- Imagen 8 -->
+    <a-image
+      class="clickable"
+      src="#imgLink8"
+      position="4 2 -14"
+      width="2"
+      height="1"
+      redirect="href: https://maps.app.goo.gl/cLvBJZhtzeMPPk3b6">
+    </a-image>
+
+    <!-- Imagen 9 -->
+    <a-image
+      class="clickable"
+      src="#imgLink9"
+      position="-2 2 -17"
+      width="2"
+      height="1"
+      redirect="href: https://maps.app.goo.gl/cuc7fyQdgaxGBqHe6">
+    </a-image>
+
+    <!-- Imagen 10 -->
+    <a-image
+      class="clickable"
+      src="#imgLink10"
+      position="2 2 -17"
+      width="2"
+      height="1"
+      redirect="href: https://maps.app.goo.gl/sVRynEQTcoho2Rqv9">
+    </a-image>
+
+    <a-text
+    class="clickable"
+    value="Melany Camarena"
+    position="-0.8 2.2 -2"
+    color="white"
+    width="4"
+    redirect="href: https://www.canva.com/design/DAG0hGThIis/1s0bzmvtgBscfxmDq5_ZzQ/view?utm_content=DAG0hGThIis&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h06eb4f89c0">
+    </a-text>
+
+    <a-entity
+    class="clickable"
+    gltf-model="#miModelo3D"
+    position="0 1 -9"
+    scale="2 2 2"
+    rotation="0 300 0"
+    redirect="href: https://www.canva.com/design/DAG0hGThIis/1s0bzmvtgBscfxmDq5_ZzQ/view?utm_content=DAG0hGThIis&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h06eb4f89c0">
+    </a-entity>
+
+    <!-- Entorno -->
+    <a-sky src="#skyTexture"></a-sky>
+    <a-plane src="#groundTexture" rotation="-90 0 0" width="30" height="30" repeat="10 10"></a-plane>
+
+    <a-light
+    type="point"
+    color="#FFAEFF"
+    intensity="2"
+    distance="30"
+    position="-0 3 -4">
+    </a-light>
+
+    <!-- Cámara + cursor/raycaster -->
+    <a-camera>
+      <a-entity cursor="fuse: false; rayOrigin: mouse;"
+                raycaster="objects: .clickable"
+                position="0 0 -1">
+      </a-entity>
+    </a-camera>
+  </a-scene>
+</body>
+</html>
